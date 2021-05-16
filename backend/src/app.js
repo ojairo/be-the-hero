@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const {errors} = require('celebrate')
 const routes = require('./routes')
 
 const app = express()
@@ -29,6 +30,6 @@ app.use(routes)
   Request Body: corpo da requisição utilizado para criar ou alterar recursos
 */
 
-app.listen(3333)
+app.use(errors())
 
-//-6:34
+module.exports = app
